@@ -4,7 +4,7 @@
 
 Un trimestre (sep–dic 2025) de tickets funcionales en una plataforma de administración electrónica para el sector educativo, leído como lo que es: una fuente de datos operativos que puede orientar decisiones, no solo una bandeja de entrada.
 
-🔗 **[Ver el case study interactivo](https://TU-USUARIO.github.io/redmine-ops-analytics/)** · 📓 [Ver el notebook de análisis](notebook/redmine_ticket_analysis.ipynb)
+🔗 **[Ver el case study interactivo](https://gdaguerre-dot.github.io/redmine-ops-analytics/)** · 📓 [Ver el notebook de análisis](notebook/redmine_ticket_analysis.ipynb)
 
 ---
 
@@ -24,7 +24,7 @@ Como Analista Funcional en un proyecto de administración electrónica orientado
 | ¿Predomina lo urgente? | No — 83% de las peticiones son prioridad *Normal* |
 | ¿Se corrige o se construye? | El trabajo correctivo duplica al evolutivo (58% vs 28%) |
 
-Ver el desarrollo completo de cada hallazgo en el [case study](https://TU-USUARIO.github.io/redmine-ops-analytics/) o en el [notebook](notebook/redmine_ticket_analysis.ipynb).
+Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre-dot.github.io/redmine-ops-analytics/) o en el [notebook](notebook/redmine_ticket_analysis.ipynb).
 
 ## Estructura del repositorio
 
