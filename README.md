@@ -34,7 +34,9 @@ redmine-ops-analytics/
 ├── data/
 │   └── tickets_anonimizado.csv        dataset público (7 columnas estructurales, 310 filas)
 ├── notebook/
-│   └── redmine_ticket_analysis.ipynb  análisis reproducible (pandas + matplotlib)
+│   ├── redmine_ticket_analysis.ipynb   análisis reproducible (pandas + matplotlib)
+│   └── nlp/
+│       └── topic_sentiment_analysis.ipynb   BERTopic + sentiment (español) — corre local, sobre texto no publicado
 ├── site/
 │   └── index.html                     case study interactivo (HTML + Chart.js), publicado vía GitHub Pages
 └── assets/
@@ -44,7 +46,7 @@ redmine-ops-analytics/
 ## Cómo reproducirlo
 
 ```bash
-git clone https://github.com/TU-USUARIO/redmine-ops-analytics.git
+git clone https://github.com/gdaguerre-dot/redmine-ops-analytics.git
 cd redmine-ops-analytics
 pip install pandas matplotlib jupyter
 jupyter notebook notebook/redmine_ticket_analysis.ipynb
@@ -66,11 +68,11 @@ El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos de
 
 ## Stack
 
-`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `Redmine` (fuente de datos original)
+`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` (fuente de datos original)
 
 ## Próximos pasos
 
-- [ ] Topic modeling (BERTopic) + análisis de sentimiento sobre el texto de las peticiones, para identificar causas raíz recurrentes por módulo *(en desarrollo — ver rama `topic-modeling` / carpeta `notebook/nlp/`)*
+- [x] Topic modeling (BERTopic) + análisis de sentimiento (español, `pysentimiento`) sobre el texto de las peticiones — ver [`notebook/nlp/topic_sentiment_analysis.ipynb`](notebook/nlp/topic_sentiment_analysis.ipynb). Corre sobre el texto original en un entorno local (no incluido en este repo por confidencialidad) y publica únicamente resultados agregados en `data/topicos_sentimiento_resumen.csv`.
 
 ---
 
