@@ -22,7 +22,7 @@ Como Analista Funcional en un proyecto de administración electrónica orientado
 | ¿Dónde se concentra el trabajo? | Un módulo explica ~46% de las peticiones — más del doble que el segundo en volumen |
 | ¿Cuánto está resuelto? | 42% en estado *Resuelta* al cierre, con varias etapas de validación intermedias |
 | ¿Predomina lo urgente? | No — 83% de las peticiones son prioridad *Normal* |
-| ¿Se corrige o se construye? | El trabajo correctivo duplica al evolutivo (58% vs 28%) |
+| ¿Se corrige o se construye? | El trabajo correctivo duplica al evolutivo (59% vs 28%) |
 | ¿Qué módulo genera más fricción, no solo más volumen? | Los temas ligados a gestión económica concentran la mayor proporción de sentimiento negativo (hasta 43%), muy por encima del 13% promedio — el mismo módulo que ya lideraba en volumen |
 
 Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre-dot.github.io/redmine-ops-analytics/) o en el [notebook](notebook/redmine_ticket_analysis.ipynb).
@@ -83,4 +83,3 @@ El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos de
 
 **Gerónimo Daguerre** · Analista Funcional · BI & Data Analytics
 [LinkedIn](https://linkedin.com/in/gerodaguerre) · gerodaguerre@gmail.com
-
