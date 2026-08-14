@@ -314,12 +314,44 @@
 
 <hr class="divider">
 
+<hr class="divider">
+
 <section>
   <div class="wrap">
-    <span class="sec-num">06 — Cierre</span>
+    <span class="sec-num">06 — Del ticket al motivo</span>
+    <h2>El mismo módulo que más pesa es el que más fricción genera</h2>
+    <p class="lead-p">Hasta acá, todo el análisis fue estructural — fechas, estados, módulos. El paso siguiente fue leer el <em>texto</em> de las peticiones: agrupamiento temático (topic modeling) sobre asunto y descripción, cruzado con un análisis de sentimiento en español, para ver no solo cuánto volumen genera cada tema sino cuánta tensión.</p>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Volumen por tema · color = intensidad negativa</h3>
+        <div class="chart-wrap tall"><canvas id="chartTopicos"></canvas></div>
+        <div class="note">10 temas detectados sobre 303 tickets con texto; 83 sin tema claro (outliers)</div>
+      </div>
+      <div>
+        <div class="finding">
+          <div class="fnum">01</div>
+          <div><h4>Gestión económica vuelve a aparecer — ahora con tono</h4><p>Los dos temas ligados a caja, asientos y pagos concentran la mayor proporción de sentimiento negativo (43% y 27%) de todo el corpus, muy por encima del 13% promedio general.</p></div>
+        </div>
+        <div class="finding">
+          <div class="fnum">02</div>
+          <div><h4>El tema más grande no es un problema — es una plantilla</h4><p>El tema con más volumen (100 tickets) resultó ser lenguaje formal repetido, no una incidencia puntual: una señal metodológica tanto como un hallazgo, y una honestidad que vale la pena mantener en cualquier análisis de texto.</p></div>
+        </div>
+        <div class="callout">
+          <p>El cruce no solo confirma dónde se concentra el volumen — ayuda a <strong>priorizar entre módulos de tamaño similar</strong> según cuál genera más fricción real en quien escribe el ticket. Esa es la diferencia entre gestionar tickets y leer, con datos, dónde conviene intervenir primero.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <span class="sec-num">07 — Cierre</span>
     <h2>De la bandeja de tickets al argumento de negocio</h2>
-    <p class="lead-p">Ninguno de estos hallazgos requirió herramientas sofisticadas: un export de Redmine, limpieza básica y algunas preguntas simples — ¿cuándo llega el trabajo?, ¿dónde se concentra?, ¿qué tan rápido se resuelve? — alcanzan para pasar de "gestionar tickets" a leer el comportamiento de un sistema y a poder argumentar, con datos, dónde conviene invertir el próximo esfuerzo de mejora.</p>
-    <p>Es exactamente el cruce que busco profesionalmente: análisis funcional con visión de negocio, sostenido por la capacidad de convertir datos operativos en decisiones.</p>
+    <p class="lead-p">Ninguno de estos hallazgos requirió herramientas sofisticadas: un export de Redmine, limpieza básica y algunas preguntas simples — ¿cuándo llega el trabajo?, ¿dónde se concentra?, ¿qué tan rápido se resuelve?, ¿qué dice el propio texto de la petición? — alcanzan para pasar de "gestionar tickets" a leer el comportamiento de un sistema y a poder argumentar, con datos, dónde conviene invertir el próximo esfuerzo de mejora.</p>
+    <p>Es exactamente el cruce que busco profesionalmente: análisis funcional con visión de negocio, sostenido por la capacidad de convertir datos operativos — estructurados y de texto libre — en decisiones.</p>
   </div>
 </section>
 
@@ -408,7 +440,40 @@ new Chart(document.getElementById('chartCategoria'), {
   }
 });
 
-// signature log strip — synthetic, illustrative ticket IDs (no real data)
+// Tópicos (topic modeling + sentimiento)
+const topicLabels = [
+  'Comunicaciones formales (plantilla)',
+  'Errores de usuario y perfil',
+  'Config. de grupos y materias',
+  'Asientos y pagos',
+  'Gestión de centros y pilotos',
+  'Perfiles e inventario',
+  'Altas e implementación',
+  'Contratos y ventanilla',
+  'Límites y caja económica',
+  'Configuración económica',
+];
+const topicSize = [100, 42, 16, 15, 11, 11, 10, 8, 7, 7];
+const topicNeg  = [0.02, 0.33, 0.00, 0.27, 0.00, 0.09, 0.10, 0.00, 0.43, 0.00];
+const topicColor = topicNeg.map(n => n >= 0.3 ? '#8A2E2E' : n >= 0.15 ? AMBER : TEAL_L);
+
+new Chart(document.getElementById('chartTopicos'), {
+  type: 'bar',
+  data: {
+    labels: topicLabels,
+    datasets: [{ data: topicSize, backgroundColor: topicColor, borderRadius: 4 }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { afterLabel: (ctx) => `Negativo: ${(topicNeg[ctx.dataIndex]*100).toFixed(0)}%` } }
+    },
+    scales: { x: { beginAtZero: true, grid: gridOpt }, y: { grid: { display: false }, ticks: { font: { size: 10.5 } } } }
+  }
+});
+
+
 const strip = document.getElementById('logstrip');
 const mods = ['GEC','SVC','VNT','SIGP','IDG','PLN','INV','NEN'];
 const states = ['RESUELTA','VALID·CAIB','EN CURSO','NUEVA','ASIGNADA'];
