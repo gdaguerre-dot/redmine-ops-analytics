@@ -23,6 +23,7 @@ Como Analista Funcional en un proyecto de administración electrónica orientado
 | ¿Cuánto está resuelto? | 42% en estado *Resuelta* al cierre, con varias etapas de validación intermedias |
 | ¿Predomina lo urgente? | No — 83% de las peticiones son prioridad *Normal* |
 | ¿Se corrige o se construye? | El trabajo correctivo duplica al evolutivo (58% vs 28%) |
+| ¿Qué módulo genera más fricción, no solo más volumen? | Los temas ligados a gestión económica concentran la mayor proporción de sentimiento negativo (hasta 43%), muy por encima del 13% promedio — el mismo módulo que ya lideraba en volumen |
 
 Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre-dot.github.io/redmine-ops-analytics/) o en el [notebook](notebook/redmine_ticket_analysis.ipynb).
 
@@ -32,7 +33,8 @@ Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre
 redmine-ops-analytics/
 ├── README.md                          este archivo
 ├── data/
-│   └── tickets_anonimizado.csv        dataset público (7 columnas estructurales, 310 filas)
+│   ├── tickets_anonimizado.csv         dataset público (7 columnas estructurales, 310 filas)
+│   └── topicos_sentimiento_resumen.csv  tópicos + sentimiento agregado (fase 2, sin texto original)
 ├── notebook/
 │   ├── redmine_ticket_analysis.ipynb   análisis reproducible (pandas + matplotlib)
 │   └── nlp/
@@ -65,6 +67,9 @@ El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos de
   <img src="assets/04_prioridad.png" width="30%">
   <img src="assets/05_categoria.png" width="30%">
 </p>
+<p align="center">
+  <img src="assets/06_topicos.png" width="60%">
+</p>
 
 ## Stack
 
@@ -78,3 +83,4 @@ El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos de
 
 **Gerónimo Daguerre** · Analista Funcional · BI & Data Analytics
 [LinkedIn](https://linkedin.com/in/gerodaguerre) · gerodaguerre@gmail.com
+
