@@ -73,7 +73,7 @@ El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos de
 
 ## Stack
 
-`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` (fuente de datos original)
+`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` 
 
 ## Próximos pasos
 
