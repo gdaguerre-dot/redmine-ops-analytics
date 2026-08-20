@@ -73,14 +73,32 @@ jupyter notebook notebook/redmine_ticket_analysis.ipynb
 
 El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos del análisis con las mismas conclusiones que el case study.
 
+## Pipeline NLP
+
+![Pipeline NLP: preprocessing, TF-IDF, BERTopic, sentiment y segmentación](https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/nlp_pipeline.svg)
+
+El texto libre de cada ticket pasa por limpieza y normalización, y de ahí se procesa en dos vías complementarias: **TF-IDF**, que identifica qué términos son característicos de cada grupo (no solo frecuentes), y **BERTopic**, que agrupa los tickets en tópicos latentes. Ambas salidas se cruzan con el resultado de **sentiment analysis** y se segmentan por tipo de trabajo (correctivo/evolutivo), sentimiento (negativo/positivo) y módulo — cada segmento se reporta siempre junto a su tamaño de muestra (`n`), para no comparar grupos de 100 tickets con grupos de 15.
+
+**Términos característicos por segmento** (TF-IDF, no frecuencia simple):
+
+| Segmento | n | Términos característicos |
+|---|---|---|
+| Correctivo | — | *(completar tras correr el análisis)* |
+| Evolutivo | — | *(completar tras correr el análisis)* |
+| Sentimiento negativo | — | *(completar tras correr el análisis)* |
+| Gestión económica | — | *(completar tras correr el análisis)* |
+
+*(La word cloud general sobre todos los tickets se evaluó y se descartó del entregable final: las palabras más frecuentes no necesariamente representan los problemas más importantes, así que no aporta sobre lo que ya muestra la tabla de tópicos. Las word clouds por segmento, cuando se implementen, quedan como apoyo visual de esta tabla dentro del notebook — no como reemplazo.)*
+
 ## Stack
 
-`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` (fuente de datos original)
+`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `TF-IDF` (scikit-learn) · `Redmine` (fuente de datos original)
 
 ## Próximos pasos
 
 - [x] Topic modeling (BERTopic) + análisis de sentimiento (español, `pysentimiento`) sobre el texto de las peticiones — ver [`notebook/nlp/topic_sentiment_analysis.ipynb`](https://github.com/gdaguerre-dot/redmine-ops-analytics/blob/main/notebook/nlp/topic_sentiment_analysis.ipynb). Corre sobre el texto original en un entorno local (no incluido en este repo por confidencialidad) y publica únicamente resultados agregados en `data/topicos_sentimiento_resumen.csv`.
-- [ ] Análisis léxico segmentado (word clouds + TF-IDF por grupo: correctivo/evolutivo, sentimiento negativo/positivo, gestión económica/resto) para caracterizar el vocabulario distintivo de cada segmento, no solo su volumen.
+- [ ] TF-IDF segmentado (correctivo/evolutivo, sentimiento negativo/positivo, gestión económica/resto) para identificar vocabulario característico por grupo, reportando siempre el `n` de cada segmento. Completar la tabla de la sección "Pipeline NLP" con los resultados reales.
+- [ ] Word clouds por segmento (no general) como apoyo visual de la tabla TF-IDF, dentro del notebook.
 
 ---
 
