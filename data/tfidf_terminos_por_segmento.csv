@@ -1,0 +1,49 @@
+segmento,n_segmento,termino,tfidf_promedio
+Correctivo,83,economica,0.04517279885960118
+Correctivo,83,perfil,0.043510588429801066
+Correctivo,83,error,0.03596197551157884
+Correctivo,83,comunicacion,0.027843968751211597
+Correctivo,83,asiento,0.02692045099591594
+Correctivo,83,pantalla,0.02672050131689287
+Correctivo,83,justificacion,0.026668100087528256
+Correctivo,83,centro,0.026136593223390094
+Correctivo,83,perfil responsable,0.022709946566086145
+Correctivo,83,debe,0.02257057694260791
+Correctivo,83,responsable,0.022134078074770646
+Correctivo,83,conselleria,0.021629526082499847
+Evolutivo,40,ventanilla,0.045629315823642255
+Evolutivo,40,centro,0.0387139743145189
+Evolutivo,40,perfil,0.03699172085736189
+Evolutivo,40,servicio,0.03442667224502863
+Evolutivo,40,prepago,0.03290246958890539
+Evolutivo,40,cargos,0.03038214175343439
+Evolutivo,40,usuarios,0.030287614910651656
+Evolutivo,40,manual,0.03017151406361495
+Evolutivo,40,actuaciones,0.02948597477573879
+Evolutivo,40,debe,0.028062760576360105
+Evolutivo,40,tarjetas,0.027846381979616537
+Evolutivo,40,modulo,0.027486043556821212
+Gestion economica,143,economica,0.05614129181420412
+Gestion economica,143,asiento,0.03692541554810884
+Gestion economica,143,perfil,0.03338031300765003
+Gestion economica,143,pantalla,0.029968778775170183
+Gestion economica,143,error,0.029855963854805875
+Gestion economica,143,asientos,0.027727219384973852
+Gestion economica,143,responsable economica,0.02543697212359182
+Gestion economica,143,responsable,0.025351728940672336
+Gestion economica,143,justificaciones,0.0242910727614939
+Gestion economica,143,perfil responsable,0.024285983604064768
+Gestion economica,143,irpf,0.02369742478227573
+Gestion economica,143,ingresos,0.022679270140901087
+Resto de modulos,167,centro,0.038488841573705926
+Resto de modulos,167,pantalla,0.03563558651889409
+Resto de modulos,167,servicio,0.033880810345673244
+Resto de modulos,167,fecha,0.030322699695719928
+Resto de modulos,167,transporte,0.02889391740427033
+Resto de modulos,167,nueva,0.025740648048627128
+Resto de modulos,167,solicitud,0.02554075660383209
+Resto de modulos,167,perfil,0.02442312646676302
+Resto de modulos,167,personal,0.024104631846278167
+Resto de modulos,167,centros,0.02398944666586657
+Resto de modulos,167,detalle,0.023510649716887072
+Resto de modulos,167,usuarios,0.023372922835218628
