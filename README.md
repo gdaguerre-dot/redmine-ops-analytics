@@ -4,7 +4,7 @@
 
 Un trimestre (sep–dic 2025) de tickets funcionales en una plataforma de administración electrónica para el sector educativo, leído como lo que es: una fuente de datos operativos que puede orientar decisiones, no solo una bandeja de entrada.
 
-🔗 **[Ver el case study interactivo](https://gdaguerre-dot.github.io/redmine-ops-analytics/)** · 📓 [Ver el notebook de análisis](notebook/redmine_ticket_analysis.ipynb)
+🔗 **[Ver el case study interactivo](https://gdaguerre-dot.github.io/redmine-ops-analytics/)** · 📓 [Ver el notebook de análisis](https://github.com/gdaguerre-dot/redmine-ops-analytics/blob/main/notebook/redmine_ticket_analysis.ipynb)
 
 ---
 
@@ -25,7 +25,24 @@ Como Analista Funcional en un proyecto de administración electrónica orientado
 | ¿Se corrige o se construye? | El trabajo correctivo duplica al evolutivo (59% vs 28%) |
 | ¿Qué módulo genera más fricción, no solo más volumen? | Los temas ligados a gestión económica concentran la mayor proporción de sentimiento negativo (hasta 43%), muy por encima del 13% promedio — el mismo módulo que ya lideraba en volumen |
 
-Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre-dot.github.io/redmine-ops-analytics/) o en el [notebook](notebook/redmine_ticket_analysis.ipynb).
+Ver el desarrollo completo de cada hallazgo en el [case study](https://gdaguerre-dot.github.io/redmine-ops-analytics/) o en el [notebook](https://github.com/gdaguerre-dot/redmine-ops-analytics/blob/main/notebook/redmine_ticket_analysis.ipynb).
+
+## Vista previa
+
+<p>
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/01_volumen_mensual.png" width="49%" alt="Volumen mensual" />
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/02_modulo.png" width="49%" alt="Peticiones por módulo" />
+</p>
+<p>
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/03_estado.png" width="32%" alt="Estado al cierre" />
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/04_prioridad.png" width="32%" alt="Prioridad asignada" />
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/05_categoria.png" width="32%" alt="Tipo de trabajo" />
+</p>
+<p>
+  <img src="https://github.com/gdaguerre-dot/redmine-ops-analytics/raw/main/assets/06_topicos.png" width="70%" alt="Tópicos y sentimiento" />
+</p>
+
+---
 
 ## Estructura del repositorio
 
@@ -47,7 +64,7 @@ redmine-ops-analytics/
 
 ## Cómo reproducirlo
 
-```bash
+```
 git clone https://github.com/gdaguerre-dot/redmine-ops-analytics.git
 cd redmine-ops-analytics
 pip install pandas matplotlib jupyter
@@ -56,30 +73,16 @@ jupyter notebook notebook/redmine_ticket_analysis.ipynb
 
 El notebook lee `data/tickets_anonimizado.csv` y regenera los cinco gráficos del análisis con las mismas conclusiones que el case study.
 
-## Vista previa
-
-<p align="center">
-  <img src="assets/01_volumen_mensual.png" width="47%">
-  <img src="assets/02_modulo.png" width="47%">
-</p>
-<p align="center">
-  <img src="assets/03_estado.png" width="30%">
-  <img src="assets/04_prioridad.png" width="30%">
-  <img src="assets/05_categoria.png" width="30%">
-</p>
-<p align="center">
-  <img src="assets/06_topicos.png" width="60%">
-</p>
-
 ## Stack
 
-`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` 
+`Python` · `pandas` · `matplotlib` · `HTML/CSS` · `Chart.js` · `BERTopic` · `pysentimiento` · `Redmine` (fuente de datos original)
 
 ## Próximos pasos
 
-- [x] Topic modeling (BERTopic) + análisis de sentimiento (español, `pysentimiento`) sobre el texto de las peticiones — ver [`notebook/nlp/topic_sentiment_analysis.ipynb`](notebook/nlp/topic_sentiment_analysis.ipynb). Corre sobre el texto original en un entorno local (no incluido en este repo por confidencialidad) y publica únicamente resultados agregados en `data/topicos_sentimiento_resumen.csv`.
+- [x] Topic modeling (BERTopic) + análisis de sentimiento (español, `pysentimiento`) sobre el texto de las peticiones — ver [`notebook/nlp/topic_sentiment_analysis.ipynb`](https://github.com/gdaguerre-dot/redmine-ops-analytics/blob/main/notebook/nlp/topic_sentiment_analysis.ipynb). Corre sobre el texto original en un entorno local (no incluido en este repo por confidencialidad) y publica únicamente resultados agregados en `data/topicos_sentimiento_resumen.csv`.
+- [ ] Análisis léxico segmentado (word clouds + TF-IDF por grupo: correctivo/evolutivo, sentimiento negativo/positivo, gestión económica/resto) para caracterizar el vocabulario distintivo de cada segmento, no solo su volumen.
 
 ---
 
 **Gerónimo Daguerre** · Analista Funcional · BI & Data Analytics
-[LinkedIn](https://linkedin.com/in/gerodaguerre) · gerodaguerre@gmail.com
+[LinkedIn](https://linkedin.com/in/gerodaguerre) · <gerodaguerre@gmail.com>
